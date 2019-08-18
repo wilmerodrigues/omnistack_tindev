@@ -9,7 +9,10 @@ mongoose.connect('mongodb+srv://wilme:wilme@cluster0-0s1vd.mongodb.net/omnistack
 });
 server.use(cors());
 server.use(express.json());
-server.use(express.urlencoded({extended: true}));
+server.use(express.urlencoded({ extended: true }));
 server.use(routes);
 
-server.listen(3333);
+const port = 3333;
+server.listen(port, () => {
+    console.log(`Server Listening on port ${port}!`)
+});
